@@ -73,7 +73,7 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Web Main Sequence" sap:VirtualizedContainerService.HintSize="951,1553" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Web Main Sequence" sap:VirtualizedContainerService.HintSize="951,2771" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="customerData" />
       <Variable x:TypeArguments="x:Int32" Default="0" Name="rowNumber" />
@@ -106,15 +106,15 @@
         </ActivityAction>
       </ui:ExcelApplicationScope.Body>
     </ui:ExcelApplicationScope>
-    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="909,1161" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="https://rpacrm.bubbleapps.io/">
+    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="909,2379" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="https://rpacrm.bubbleapps.io/">
       <ui:OpenBrowser.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[rowNumber &lt; customerData.Rows.Count]" DisplayName="While" sap:VirtualizedContainerService.HintSize="875,1060" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_2">
+          <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[rowNumber &lt; customerData.Rows.Count]" DisplayName="While" sap:VirtualizedContainerService.HintSize="875,2278" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_2">
             <ui:InterruptibleWhile.Body>
-              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="839,895" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="839,2113" sap2010:WorkflowViewState.IdRef="Sequence_5">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -208,6 +208,144 @@
                     </Sequence>
                   </If.Else>
                 </If>
+                <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBetweenKeys="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DelayBefore="2" DelayMS="2" DisplayName="Input address" EmptyField="True" sap:VirtualizedContainerService.HintSize="797,134" sap2010:WorkflowViewState.IdRef="TypeInto_4" SimulateType="True" Text="[customerData(rowNumber)(&quot;address&quot;).tostring]">
+                  <ui:TypeInto.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c36dcd67-84ce-4d2b-b45c-66e7c998eada" InformativeScreenshot="6177b961bd70d2c3b046a9fa4b7b7221" Selector="&lt;webctrl tabindex='6' tag='INPUT' type='input' /&gt;">
+                      <ui:Target.TimeoutMS>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:Target.TimeoutMS>
+                      <ui:Target.WaitForReady>
+                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                      </ui:Target.WaitForReady>
+                    </ui:Target>
+                  </ui:TypeInto.Target>
+                </ui:TypeInto>
+                <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBetweenKeys="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DelayBefore="2" DelayMS="2" DisplayName="Input city" EmptyField="True" sap:VirtualizedContainerService.HintSize="797,134" sap2010:WorkflowViewState.IdRef="TypeInto_5" SimulateType="True" Text="[customerData(rowNumber)(&quot;city&quot;).tostring]">
+                  <ui:TypeInto.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="22ed95c0-66bb-4310-b5e0-f9fe6efeb50c" InformativeScreenshot="f7e91b78be5e2fd3180480fc334b1dfb" Selector="&lt;webctrl tabindex='7' tag='INPUT' type='input' /&gt;">
+                      <ui:Target.TimeoutMS>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:Target.TimeoutMS>
+                      <ui:Target.WaitForReady>
+                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                      </ui:Target.WaitForReady>
+                    </ui:Target>
+                  </ui:TypeInto.Target>
+                </ui:TypeInto>
+                <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="2" DelayBefore="2" DisplayName="Select state" sap:VirtualizedContainerService.HintSize="797,134" sap2010:WorkflowViewState.IdRef="SelectItem_1" Item="[customerData(rowNumber)(&quot;state&quot;).tostring]">
+                  <ui:SelectItem.Items>
+                    <scg:List x:TypeArguments="x:String" Capacity="50">
+                      <x:String>Choose an option...</x:String>
+                      <x:String></x:String>
+                      <x:String>Alabama</x:String>
+                      <x:String>Alaska</x:String>
+                      <x:String>Arizona</x:String>
+                      <x:String>Arkansas</x:String>
+                      <x:String>California</x:String>
+                      <x:String>Colorado</x:String>
+                      <x:String>Connecticut</x:String>
+                      <x:String>Delaware</x:String>
+                      <x:String>District of Columbia</x:String>
+                      <x:String>Florida</x:String>
+                      <x:String>Georgia</x:String>
+                      <x:String>Hawaii</x:String>
+                      <x:String>Idaho</x:String>
+                      <x:String>Illinois</x:String>
+                      <x:String>Indiana</x:String>
+                      <x:String>Iowa</x:String>
+                      <x:String>Kansas</x:String>
+                      <x:String>Kentucky</x:String>
+                      <x:String>Louisiana</x:String>
+                      <x:String>Maine</x:String>
+                      <x:String>Maryland</x:String>
+                      <x:String>Massachusetts</x:String>
+                      <x:String>Michigan</x:String>
+                      <x:String>Minnesota</x:String>
+                      <x:String>Mississippi</x:String>
+                      <x:String>Missouri</x:String>
+                      <x:String>Montana</x:String>
+                      <x:String>Nebraska</x:String>
+                      <x:String>Nevada</x:String>
+                      <x:String>New Hampshire</x:String>
+                      <x:String>New Jersey</x:String>
+                      <x:String>New Mexico</x:String>
+                      <x:String>New York</x:String>
+                      <x:String>North Carolina</x:String>
+                      <x:String>North Dakota</x:String>
+                      <x:String>Ohio</x:String>
+                      <x:String>Oklahoma</x:String>
+                      <x:String>Oregon</x:String>
+                      <x:String>Pennsylvania</x:String>
+                      <x:String>Rhode Island</x:String>
+                      <x:String>South Carolina</x:String>
+                      <x:String>South Dakota</x:String>
+                      <x:String>Tennessee</x:String>
+                      <x:String>Texas</x:String>
+                      <x:String>Utah</x:String>
+                      <x:String>Vermont</x:String>
+                      <x:String>Virginia</x:String>
+                      <x:String>Washington</x:String>
+                    </scg:List>
+                  </ui:SelectItem.Items>
+                  <ui:SelectItem.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5ce61e25-f6d1-4d73-9024-28ca436a97f0" InformativeScreenshot="32909c2fe6be1a4585a9fd63a4f743e9" Selector="&lt;webctrl tag='SELECT' /&gt;">
+                      <ui:Target.TimeoutMS>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:Target.TimeoutMS>
+                      <ui:Target.WaitForReady>
+                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                      </ui:Target.WaitForReady>
+                    </ui:Target>
+                  </ui:SelectItem.Target>
+                </ui:SelectItem>
+                <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBetweenKeys="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DelayBefore="2" DelayMS="2" DisplayName="Input home phone number" EmptyField="True" sap:VirtualizedContainerService.HintSize="797,134" sap2010:WorkflowViewState.IdRef="TypeInto_6" SimulateType="True" Text="[customerData(rowNumber)(&quot;home phone&quot;).tostring]">
+                  <ui:TypeInto.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="faa45193-8475-4c07-a5c5-c9da80cbd9e0" InformativeScreenshot="603f11d9fa2aa93da56d2e8b9bf64487" Selector="&lt;webctrl tabindex='9' tag='INPUT' type='input' /&gt;">
+                      <ui:Target.TimeoutMS>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:Target.TimeoutMS>
+                      <ui:Target.WaitForReady>
+                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                      </ui:Target.WaitForReady>
+                    </ui:Target>
+                  </ui:TypeInto.Target>
+                </ui:TypeInto>
+                <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBetweenKeys="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DelayBefore="2" DelayMS="2" DisplayName="Input work phone number" EmptyField="True" sap:VirtualizedContainerService.HintSize="797,134" sap2010:WorkflowViewState.IdRef="TypeInto_7" SimulateType="True" Text="[customerData(rowNumber)(&quot;work phone&quot;).tostring]">
+                  <ui:TypeInto.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="afe1e7cd-7b44-41fe-b9df-e872bcbbb84f" InformativeScreenshot="1a893026ddb2187249c60426b23aca3f" Selector="&lt;webctrl tabindex='10' tag='INPUT' type='input' /&gt;">
+                      <ui:Target.TimeoutMS>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:Target.TimeoutMS>
+                      <ui:Target.WaitForReady>
+                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                      </ui:Target.WaitForReady>
+                    </ui:Target>
+                  </ui:TypeInto.Target>
+                </ui:TypeInto>
+                <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBetweenKeys="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DelayBefore="2" DelayMS="2" DisplayName="Input personal email" EmptyField="True" sap:VirtualizedContainerService.HintSize="797,134" sap2010:WorkflowViewState.IdRef="TypeInto_8" SimulateType="True" Text="[customerData(rowNumber)(&quot;personal email&quot;).tostring]">
+                  <ui:TypeInto.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="682cd581-682e-499b-a07e-ec7b5e38aba3" InformativeScreenshot="875def9d5728eea7c9a080f757545262" Selector="&lt;webctrl tag='INPUT' type='email' /&gt;">
+                      <ui:Target.TimeoutMS>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:Target.TimeoutMS>
+                      <ui:Target.WaitForReady>
+                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                      </ui:Target.WaitForReady>
+                    </ui:Target>
+                  </ui:TypeInto.Target>
+                </ui:TypeInto>
+                <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBetweenKeys="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DelayBefore="2" DelayMS="2" DisplayName="Input work email" EmptyField="True" sap:VirtualizedContainerService.HintSize="797,134" sap2010:WorkflowViewState.IdRef="TypeInto_9" SimulateType="True" Text="[customerData(rowNumber)(&quot;work email&quot;).tostring]">
+                  <ui:TypeInto.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c8e8f5ac-4128-48f6-8039-6b3047a5fc3a" InformativeScreenshot="e0d70c00b17b84ea57a231b75010e813" Selector="&lt;webctrl tabindex='12' tag='INPUT' type='email' /&gt;">
+                      <ui:Target.TimeoutMS>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:Target.TimeoutMS>
+                      <ui:Target.WaitForReady>
+                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                      </ui:Target.WaitForReady>
+                    </ui:Target>
+                  </ui:TypeInto.Target>
+                </ui:TypeInto>
                 <Assign DisplayName="Counter" sap:VirtualizedContainerService.HintSize="797,60" sap2010:WorkflowViewState.IdRef="Assign_1">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:Int32">[rowNumber]</OutArgument>
